@@ -1,0 +1,33 @@
+# Documentación de Funciones - OUILookup.py
+
+## Función: obtener_fabricante
+Obtiene el fabricante de una dirección MAC a través de una API externa.
+
+### Parámetros:
+- mac_address (str): La dirección MAC a consultar.
+
+### Retorna:
+- tuple: Una tupla que contiene el nombre del fabricante (str) y el tiempo de respuesta de la API en milisegundos (float).
+
+
+## Función: obtener_tabla_arp
+Obtiene la tabla ARP del sistema ejecutando el comando `arp -a`.
+
+### Retorna:
+- dict: Un diccionario donde las claves son las direcciones MAC y los valores son las direcciones IP correspondientes.
+
+
+## Función: main
+Función principal que maneja los argumentos de línea de comandos y llama a las funciones apropiadas.
+
+### Parámetros:
+- argv (list): Lista de argumentos de línea de comandos.
+
+### Uso:
+- --mac <mac>: Consulta el fabricante de una dirección MAC específica.
+- --arp: Muestra los fabricantes de los hosts disponibles en la tabla ARP.
+- --help: Muestra la ayuda de uso.
+
+### Ejemplo de Uso:
+- `python OUILookup.py --mac 98:06:3c:92:ff:c5`
+- `python OUILookup.py --arp`
